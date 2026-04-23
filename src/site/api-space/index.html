@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espace API - Projet API TAIA</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body id="top" data-page="api-space">
+    <div class="page-bg"></div>
+    <header class="site-header">
+      <a href="../" class="brand">
+        <img src="../assets/logo.svg" alt="Logo TAIA" class="brand-logo" />
+        <span class="brand-copy">
+          <span class="brand-kicker">Projet API TAIA</span>
+          <strong>Espace API</strong>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="../">Programme</a>
+        <a href="../conferences/">Conférences</a>
+        <a href="../speakers/">Speakers</a>
+        <a href="../salles/">Salles</a>
+        <a href="../entreprises/">Entreprises</a>
+        <a href="./" class="is-active">Espace API</a>
+        <a href="../admin/">Admin</a>
+        <a href="../docs/Swagger/" class="nav-swagger">Swagger</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/CFTL-TAIA/taia-api.github.io" class="button button-dark" target="_blank" rel="noreferrer">Projet GitHub</a>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Documentation fonctionnelle</p>
+          <h1>API test TAIA</h1>
+          <p class="lead">
+            Cette page conserve le tableau de bord de l'API pour documenter les endpoints publics, visualiser un extrait JSON réel et parcourir rapidement les conférences, speakers et salles exposés par les routes serverless.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#conference" class="button">Explorer les données</a>
+            <a href="../docs/Swagger/" class="button button-secondary">Tester les endpoints</a>
+          </div>
+
+          <ul class="tag-list">
+            <li>GET /api/conference</li>
+            <li>GET /api/speaker</li>
+            <li>GET /api/salle</li>
+            <li>GET /api/entreprise</li>
+            <li>POST /api/admin/token</li>
+          </ul>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="hero-panel-head">
+            <span class="panel-title">Réponse live</span>
+            <span class="panel-chip">JSON 200</span>
+          </div>
+          <pre id="api-preview" class="preview-block">Chargement...</pre>
+        </aside>
+      </section>
+
+      <section class="stats-grid" aria-label="Statistiques API">
+        <article class="stat-card coral">
+          <span class="stat-label">Conférences</span>
+          <strong id="conference-count" class="stat-value">--</strong>
+        </article>
+        <article class="stat-card teal">
+          <span class="stat-label">Speakers</span>
+          <strong id="speaker-count" class="stat-value">--</strong>
+        </article>
+        <article class="stat-card gold">
+          <span class="stat-label">Salles</span>
+          <strong id="salle-count" class="stat-value">--</strong>
+        </article>
+        <article class="stat-card berry">
+          <span class="stat-label">Entreprises</span>
+          <strong id="entreprise-count" class="stat-value">--</strong>
+        </article>
+      </section>
+
+      <section class="resource-grid">
+        <article id="conference" class="resource-card accent-coral">
+          <div class="resource-header">
+            <div>
+              <p class="resource-kicker">Conference</p>
+              <h2>Programme</h2>
+            </div>
+            <code>GET /api/conference?nom=Keynote</code>
+          </div>
+          <p class="resource-text">Recherche possible par nom, id, speaker, salle ou horaire.</p>
+          <ul id="conference-list" class="resource-list"></ul>
+        </article>
+
+        <article id="speakers" class="resource-card accent-teal">
+          <div class="resource-header">
+            <div>
+              <p class="resource-kicker">Speakers</p>
+              <h2>Intervenants</h2>
+            </div>
+            <code>GET /api/speaker?etage=2</code>
+          </div>
+          <p class="resource-text">Le filtre etage sur les speakers est déduit à partir des salles de leurs conférences.</p>
+          <ul id="speaker-list" class="resource-list"></ul>
+        </article>
+
+        <article id="salles" class="resource-card accent-gold">
+          <div class="resource-header">
+            <div>
+              <p class="resource-kicker">Salles</p>
+              <h2>Capacités</h2>
+            </div>
+            <code>GET /api/salle?etage=0</code>
+          </div>
+          <p class="resource-text">Les salles exposent leurs informations de localisation et de contenance.</p>
+          <ul id="salle-list" class="resource-list"></ul>
+        </article>
+
+        <article id="entreprises" class="resource-card accent-berry">
+          <div class="resource-header">
+            <div>
+              <p class="resource-kicker">Entreprise</p>
+              <h2>Organisations</h2>
+            </div>
+            <code>GET /api/entreprise?nomEntreprise=Open</code>
+          </div>
+          <p class="resource-text">Les entreprises regroupent logos, liens de site et rattachements vers les speakers et conférences.</p>
+          <ul id="entreprise-list" class="resource-list"></ul>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="../assets/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,424 @@
+[
+  {
+    "id": "conf-ouverture-olivier-denoo",
+    "nom": "Ouverture par Olivier Denoo",
+    "horaire": "2026-06-09T09:00:00+02:00",
+    "speakerIds": [
+      "spk-olivier-denoo"
+    ],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-keynote-1-gouvernance-antifragile",
+    "nom": "Keynote #1 : Vers une gouvernance antifragile: décider à l'ère des collectifs humain agent",
+    "horaire": "2026-06-09T09:20:00+02:00",
+    "speakerIds": [
+      "spk-gabriel-rousseau",
+      "spk-karim-hedeoud-perrot"
+    ],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "keynote"
+  },
+  {
+    "id": "conf-20-minutes-open",
+    "nom": "20 minutes pour convaincre OPEN",
+    "horaire": "2026-06-09T09:50:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "sponsor"
+  },
+  {
+    "id": "conf-visite-stands-collation-matin",
+    "nom": "Visite des stands & collation",
+    "horaire": "2026-06-09T10:10:00+02:00",
+    "speakerIds": [],
+    "salleIds": [],
+    "type": "networking"
+  },
+  {
+    "id": "conf-ia-generative-tests-augmentes",
+    "nom": "De l’IA générative aux tests “augmentés” : Les 7 leçons apprises pour industrialiser l’IA dans le cycle de test",
+    "horaire": "2026-06-09T10:40:00+02:00",
+    "speakerIds": [
+      "spk-anthony-labarre",
+      "spk-gilles-nouais",
+      "spk-betty-beauge"
+    ],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-automatisation-tests-tribunal",
+    "nom": "L'automatisation des tests au tribunal",
+    "horaire": "2026-06-09T10:40:00+02:00",
+    "speakerIds": [
+      "spk-frederic-assante-di-capillo",
+      "spk-severine-cabocel",
+      "spk-michael-granier"
+    ],
+    "salleIds": [
+      "sal-auditorium-blin"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-aventuriers-bdd-part-1",
+    "nom": "Les aventuriers du BDD: déployer le BDD dans 75 squads – part 1",
+    "horaire": "2026-06-09T10:40:00+02:00",
+    "speakerIds": [
+      "spk-jean-marc-pires"
+    ],
+    "salleIds": [
+      "sal-grand-salon"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-arreter-vanity-metrics",
+    "nom": "Arrêter les vanity metrics",
+    "horaire": "2026-06-09T10:40:00+02:00",
+    "speakerIds": [
+      "spk-jean-francois-fresi",
+      "spk-ramy-abid"
+    ],
+    "salleIds": [
+      "sal-2-2"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-demo-agilitest",
+    "nom": "Démonstration éditeur AGILITEST",
+    "horaire": "2026-06-09T10:40:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-4"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-demo-arcad-software",
+    "nom": "Démonstration éditeur ARCAD SOFTWARE",
+    "horaire": "2026-06-09T10:40:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-5"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-demo-kalifast",
+    "nom": "Démonstration éditeur KALIFAST",
+    "horaire": "2026-06-09T10:40:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-6"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-tester-les-agents-ia",
+    "nom": "Tester les agents IA – Défis, techniques et retour d'expériences",
+    "horaire": "2026-06-09T11:30:00+02:00",
+    "speakerIds": [
+      "spk-bruno-legeard"
+    ],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-robot-hybride",
+    "nom": "Robot hybride pour mission critique : sécuriser le budget avec l’automatisation et des tests intelligents",
+    "horaire": "2026-06-09T11:30:00+02:00",
+    "speakerIds": [
+      "spk-julien-agoulon",
+      "spk-emmanuel-nocet"
+    ],
+    "salleIds": [
+      "sal-auditorium-blin"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-developpeur-infiltre-testeurs",
+    "nom": "Un développeur infiltré chez les testeurs : Comment faire échouer le BDD, l'ATDD & le TDD surtout à l'ère du Spec Driven Development",
+    "horaire": "2026-06-09T11:30:00+02:00",
+    "speakerIds": [
+      "spk-pierre-yves-pamart"
+    ],
+    "salleIds": [
+      "sal-grand-salon"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-rag-na-rock",
+    "nom": "RAG NA ROCK",
+    "horaire": "2026-06-09T11:30:00+02:00",
+    "speakerIds": [
+      "spk-xavier-blanc"
+    ],
+    "salleIds": [
+      "sal-2-2"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-demo-athenco",
+    "nom": "Démonstration éditeur ATHENCO",
+    "horaire": "2026-06-09T11:30:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-4"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-demo-opentext",
+    "nom": "Démonstration éditeur OPENTEXT",
+    "horaire": "2026-06-09T11:30:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-5"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-demo-unguess",
+    "nom": "Démonstration éditeur UNGUESS",
+    "horaire": "2026-06-09T11:30:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-6"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-cocktail-dejeuner-visite-stands",
+    "nom": "Cocktail déjeuner & visite des stands",
+    "horaire": "2026-06-09T12:10:00+02:00",
+    "speakerIds": [],
+    "salleIds": [],
+    "type": "networking"
+  },
+  {
+    "id": "conf-keynote-2-women-lead-tech",
+    "nom": "Keynote #2 : When Women Lead Tech: From Entry Level to Executive Management",
+    "horaire": "2026-06-09T13:30:00+02:00",
+    "speakerIds": [
+      "spk-natia-sirbiladze"
+    ],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "keynote"
+  },
+  {
+    "id": "conf-20-minutes-mr-suricate",
+    "nom": "20 minutes pour convaincre MR SURICATE",
+    "horaire": "2026-06-09T14:00:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "sponsor"
+  },
+  {
+    "id": "conf-redefinir-qualite-ia-red-teaming",
+    "nom": "Redéfinir la qualité de l'IA grâce aux tests contradictoires et au red teaming",
+    "horaire": "2026-06-09T14:30:00+02:00",
+    "speakerIds": [
+      "spk-violaine-mansard-auduberteaud",
+      "spk-alexandra-guimaraes-teixeira"
+    ],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-auto-maintenance-tests",
+    "nom": "En route vers l'Auto-Maintenance des tests",
+    "horaire": "2026-06-09T14:30:00+02:00",
+    "speakerIds": [
+      "spk-francois-xavier-le-gal",
+      "spk-rodolphe-jacquemin"
+    ],
+    "salleIds": [
+      "sal-auditorium-blin"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-qualite-sans-compromis",
+    "nom": "Qualité sans compromis, l'approche data-driven en environnement agile",
+    "horaire": "2026-06-09T14:30:00+02:00",
+    "speakerIds": [
+      "spk-remy-darras",
+      "spk-sabir-archkak"
+    ],
+    "salleIds": [
+      "sal-grand-salon"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-migration-sap-s4hana",
+    "nom": "Migration SAP vers S/4 HANA : comment la QA peut devenir un acteur central du succès des projets SAP",
+    "horaire": "2026-06-09T14:30:00+02:00",
+    "speakerIds": [
+      "spk-emmanuel-pene",
+      "spk-melodie-chapelier"
+    ],
+    "salleIds": [
+      "sal-2-2"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-demo-mr-suricate",
+    "nom": "Démonstration éditeur MR SURICATE",
+    "horaire": "2026-06-09T14:30:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-5"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-demo-uipath",
+    "nom": "Démonstration éditeur UIPATH",
+    "horaire": "2026-06-09T14:30:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-6"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-table-ronde-rayonner-qualite",
+    "nom": "Parler du test pour faire rayonner la qualité",
+    "horaire": "2026-06-09T14:30:00+02:00",
+    "speakerIds": [
+      "spk-fanny-velsin",
+      "spk-florence-guerlais",
+      "spk-nancaidah-toure-chauvin"
+    ],
+    "salleIds": [
+      "sal-2-4"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-permis-conduire-ia",
+    "nom": "Permis de conduire IA : mieux piloter, éviter les amendes et rouler tout en confiance.",
+    "horaire": "2026-06-09T15:20:00+02:00",
+    "speakerIds": [
+      "spk-nabil-idhammou",
+      "spk-david-jedat",
+      "spk-marius-ortega"
+    ],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-agilite-echelle-tmmi",
+    "nom": "Agilité à l'échelle et TMMI : quelle valeur ajoutée de l'IA ?",
+    "horaire": "2026-06-09T15:20:00+02:00",
+    "speakerIds": [
+      "spk-gil-burdallet"
+    ],
+    "salleIds": [
+      "sal-auditorium-blin"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-7-principes-qualite-agile",
+    "nom": "Des 7 principes du test aux 7 principes de la qualité (en agile) ?",
+    "horaire": "2026-06-09T15:20:00+02:00",
+    "speakerIds": [
+      "spk-julien-cahu",
+      "spk-sabeur-rahmouni"
+    ],
+    "salleIds": [
+      "sal-grand-salon"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-engagement-communautaire-qualite",
+    "nom": "Engagez-vous qu'ils disaient ! Comment l'engagement communautaire peut vous faire progresser techniquement et humainement.",
+    "horaire": "2026-06-09T15:20:00+02:00",
+    "speakerIds": [
+      "spk-daphne-herve"
+    ],
+    "salleIds": [
+      "sal-2-2"
+    ],
+    "type": "session"
+  },
+  {
+    "id": "conf-demo-smartesting",
+    "nom": "Démonstration éditeur SMARTESTING",
+    "horaire": "2026-06-09T15:20:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-2-5"
+    ],
+    "type": "demo"
+  },
+  {
+    "id": "conf-20-minutes-digital-ai",
+    "nom": "20 minutes pour convaincre DIGITAL AI",
+    "horaire": "2026-06-09T16:10:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "sponsor"
+  },
+  {
+    "id": "conf-visite-stands-collation-apresmidi",
+    "nom": "Visite des stands & collation",
+    "horaire": "2026-06-09T16:30:00+02:00",
+    "speakerIds": [],
+    "salleIds": [],
+    "type": "networking"
+  },
+  {
+    "id": "conf-keynote-3-bonheur-sinon-rien",
+    "nom": "Keynote #3 : Le bonheur sinon rien !",
+    "horaire": "2026-06-09T17:00:00+02:00",
+    "speakerIds": [
+      "spk-bernard-rulmont"
+    ],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "keynote"
+  },
+  {
+    "id": "conf-remise-prix-cloture",
+    "nom": "Remise des prix & Clôture de la journée",
+    "horaire": "2026-06-09T17:30:00+02:00",
+    "speakerIds": [],
+    "salleIds": [
+      "sal-auditorium-moebius"
+    ],
+    "type": "closing"
+  }
+]

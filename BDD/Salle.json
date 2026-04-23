@@ -1,0 +1,44 @@
+[
+  {
+    "id": "sal-auditorium-moebius",
+    "nom": "Auditorium Moebius",
+    "etage": 0,
+    "contenance": 420
+  },
+  {
+    "id": "sal-auditorium-blin",
+    "nom": "Auditorium Blin",
+    "etage": 0,
+    "contenance": 260
+  },
+  {
+    "id": "sal-grand-salon",
+    "nom": "Grand Salon",
+    "etage": 0,
+    "contenance": 180
+  },
+  {
+    "id": "sal-2-2",
+    "nom": "Salle 2.2",
+    "etage": 2,
+    "contenance": 90
+  },
+  {
+    "id": "sal-2-4",
+    "nom": "Salle 2.4",
+    "etage": 2,
+    "contenance": 70
+  },
+  {
+    "id": "sal-2-5",
+    "nom": "Salle 2.5",
+    "etage": 2,
+    "contenance": 70
+  },
+  {
+    "id": "sal-2-6",
+    "nom": "Salle 2.6",
+    "etage": 2,
+    "contenance": 70
+  }
+]

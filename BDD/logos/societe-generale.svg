@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Societe Generale">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#183153" />
+      <stop offset="100%" stop-color="#0f9a94" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="32" fill="url(#bg)" />
+  <circle cx="110" cy="112" r="56" fill="rgba(255,255,255,0.16)" />
+  <text x="110" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">SG</text>
+  <text x="60" y="222" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff">Societe Generale</text>
+  <text x="60" y="274" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#dbeafe">Logo placeholder a remplacer</text>
+</svg>

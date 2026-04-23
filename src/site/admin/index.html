@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Projet API TAIA</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body id="top" data-page="admin">
+    <div class="page-bg"></div>
+    <header class="site-header">
+      <a href="../" class="brand">
+        <img src="../assets/logo.svg" alt="Logo TAIA" class="brand-logo" />
+        <span class="brand-copy">
+          <span class="brand-kicker">Projet API TAIA</span>
+          <strong>Administration</strong>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="../">Programme</a>
+        <a href="../conferences/">Conférences</a>
+        <a href="../speakers/">Speakers</a>
+        <a href="../salles/">Salles</a>
+        <a href="../entreprises/">Entreprises</a>
+        <a href="../api-space/">Espace API</a>
+        <a href="./" class="is-active">Admin</a>
+        <a href="../docs/Swagger/" class="nav-swagger">Swagger</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/CFTL-TAIA/taia-api.github.io" class="button button-dark" target="_blank" rel="noreferrer">Projet GitHub</a>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero admin-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Back-office sécurisé</p>
+          <h1>Admin JFTL 2026</h1>
+          <p class="lead">
+            Génère le JWT du jour à partir d'un mot de passe configuré côté serveur, puis administre les conférences, speakers, salles et entreprises avec des formulaires dédiés.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#admin-auth" class="button">Déverrouiller l'admin</a>
+            <a href="../docs/Swagger/" class="button button-secondary">Tester avec Swagger</a>
+          </div>
+
+          <ul class="tag-list">
+            <li>POST /api/admin/token</li>
+            <li>JWT quotidien à scopes</li>
+            <li>Modifier, créer, supprimer selon le niveau</li>
+          </ul>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="hero-panel-head">
+            <span class="panel-title">Niveaux d'accès</span>
+            <span class="panel-chip">Admin</span>
+          </div>
+          <div id="admin-hint" class="info-stack">
+            <p>Chargement des consignes de génération...</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="admin-auth" class="admin-auth-shell">
+        <article class="resource-card accent-berry admin-auth-card admin-auth-card-full">
+          <div class="resource-header">
+            <div>
+              <p class="resource-kicker">Authentification</p>
+              <h2>JWT du jour</h2>
+            </div>
+            <code>Authorization: Bearer &lt;jwt&gt;</code>
+          </div>
+
+          <form id="admin-login-form" class="admin-login-form">
+            <label class="admin-field">
+              <span>Mot de passe admin *</span>
+              <input id="admin-password" name="password" type="password" autocomplete="current-password" placeholder="Mot de passe configuré côté serveur" required />
+            </label>
+            <div class="admin-auth-actions">
+              <div class="admin-inline-actions">
+                <button type="submit" class="button">Générer le token</button>
+                <button id="admin-logout" type="button" class="button button-ghost">Oublier le token</button>
+              </div>
+              <p id="admin-auth-message" class="admin-feedback admin-auth-feedback">Utilise le formulaire pour générer le JWT journalier.</p>
+            </div>
+          </form>
+
+          <div class="admin-status-grid admin-status-grid-wide">
+            <div class="meta-card">
+              <p class="meta-label">Etat</p>
+              <strong id="admin-token-status">Aucun token chargé</strong>
+            </div>
+            <div class="meta-card">
+              <p class="meta-label">Date JWT</p>
+              <strong id="admin-token-date">--</strong>
+            </div>
+            <div class="meta-card">
+              <p class="meta-label">Scope</p>
+              <strong id="admin-token-scope">--</strong>
+            </div>
+            <div class="meta-card">
+              <p class="meta-label">Droits</p>
+              <strong id="admin-token-permissions">--</strong>
+            </div>
+          </div>
+
+          <label class="admin-field">
+            <span>JWT courant</span>
+            <textarea id="admin-token-output" class="admin-token-output" readonly>Pas de token en session.</textarea>
+          </label>
+        </article>
+      </section>
+
+      <section id="admin-workspace" class="admin-workspace" hidden>
+        <article class="resource-card accent-coral admin-access-card">
+          <div class="resource-header">
+            <div>
+              <p class="resource-kicker">Accès courant</p>
+              <h2>Rubriques déverrouillées</h2>
+            </div>
+            <code id="admin-access-badge">scope: --</code>
+          </div>
+          <p id="admin-access-copy" class="resource-text">Aucune rubrique n'est visible tant qu'un token valide n'a pas été généré.</p>
+        </article>
+
+        <section class="admin-mode-section" data-access="update" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="resource-kicker">Modifier</p>
+              <h2>Mettre à jour une ressource existante</h2>
+            </div>
+            <span class="pill">editor</span>
+          </div>
+          <div class="admin-mode-grid" data-mode="update"></div>
+        </section>
+
+        <section class="admin-mode-section" data-access="create" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="resource-kicker">Créer</p>
+              <h2>Ajouter une nouvelle ressource</h2>
+            </div>
+            <span class="pill">admin-plus</span>
+          </div>
+          <div class="admin-mode-grid" data-mode="create"></div>
+        </section>
+
+        <section class="admin-mode-section" data-access="delete" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="resource-kicker">Supprimer</p>
+              <h2>Retirer une ressource après confirmation</h2>
+            </div>
+            <span class="pill">admin-plus</span>
+          </div>
+          <div class="admin-mode-grid" data-mode="delete"></div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="../assets/admin.js"></script>
+  </body>
+</html>

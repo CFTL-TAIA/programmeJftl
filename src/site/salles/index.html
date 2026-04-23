@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salles - PROGRAMME DE LA JFTL 2026</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body id="top" data-directory="salle">
+    <div class="page-bg"></div>
+    <header class="site-header">
+      <a href="../" class="brand">
+        <img src="../assets/logo.svg" alt="Logo TAIA" class="brand-logo" />
+        <span class="brand-copy">
+          <span class="brand-kicker">Projet API TAIA</span>
+          <strong>Salles</strong>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="../">Programme</a>
+        <a href="../conferences/">Conférences</a>
+        <a href="../speakers/">Speakers</a>
+        <a href="./" class="is-active">Salles</a>
+        <a href="../entreprises/">Entreprises</a>
+        <a href="../api-space/">Espace API</a>
+        <a href="../admin/">Admin</a>
+        <a href="../docs/Swagger/" class="nav-swagger">Swagger</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/CFTL-TAIA/taia-api.github.io" class="button button-dark" target="_blank" rel="noreferrer">Projet GitHub</a>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Cartographie des lieux</p>
+          <h1>Salles</h1>
+          <p class="lead">
+            Les salles du Beffroi sont reliées aux conférences du programme. Chaque vue permet de retrouver rapidement les créneaux et les speakers qui y passent.
+          </p>
+        </div>
+        <aside class="hero-panel">
+          <div class="hero-panel-head">
+            <span class="panel-title">Répertoire</span>
+            <span id="directory-count" class="panel-chip">--</span>
+          </div>
+          <p>Les étages sont repris dans la BDD JSON. Les contenances sont conservées comme valeurs de travail pour le front.</p>
+        </aside>
+      </section>
+
+      <section class="detail-shell">
+        <div id="detail-card">Chargement...</div>
+      </section>
+
+      <section class="directory-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Référentiel</p>
+            <h2>Liste des salles</h2>
+          </div>
+        </div>
+        <div id="directory-list" class="directory-list">Chargement...</div>
+      </section>
+    </main>
+
+    <script type="module" src="../assets/directory.js"></script>
+  </body>
+</html>

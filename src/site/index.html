@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROGRAMME DE LA JFTL 2026</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body id="top" data-page="programme">
+    <div class="page-bg"></div>
+    <header class="site-header">
+      <a href="./" class="brand">
+        <img src="./assets/logo.svg" alt="Logo TAIA" class="brand-logo" />
+        <span class="brand-copy">
+          <span class="brand-kicker">Projet API TAIA</span>
+          <strong>Programme</strong>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="./" class="is-active">Programme</a>
+        <a href="./conferences/">Conférences</a>
+        <a href="./speakers/">Speakers</a>
+        <a href="./salles/">Salles</a>
+        <a href="./entreprises/">Entreprises</a>
+        <a href="./api-space/">Espace API</a>
+        <a href="./admin/">Admin</a>
+        <a href="./docs/Swagger/" class="nav-swagger">Swagger</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/CFTL-TAIA/taia-api.github.io" class="button button-dark" target="_blank" rel="noreferrer">Projet GitHub</a>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero hero-programme hero-single">
+        <div class="hero-copy">
+          <p class="eyebrow">Journée française des tests logiciels</p>
+          <h1>Programme</h1>
+          <p class="lead">
+            La JFTL du 9 juin 2026 au Beffroi de Montrouge rassemble une journée complète de keynotes, retours d'expérience, démonstrations éditeurs et table ronde autour des tests logiciels, de la QA et de l'IA appliquée au delivery.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#programme" class="button">Voir le programme complet</a>
+            <a href="./api-space/" class="button button-secondary">Ouvrir l'espace API</a>
+          </div>
+
+          <div class="hero-metadata">
+            <article class="meta-card">
+              <span class="meta-label">Date</span>
+              <strong>9 juin 2026</strong>
+            </article>
+            <article class="meta-card">
+              <span class="meta-label">Lieu</span>
+              <strong>Beffroi de Montrouge</strong>
+            </article>
+            <article class="meta-card">
+              <span class="meta-label">Format</span>
+              <strong>Talks, keynotes, demos</strong>
+            </article>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="programme" class="programme-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Vue d'ensemble</p>
+            <h2>Programme complet</h2>
+          </div>
+          <p class="section-text">Cliquez sur une conférence, un speaker ou une salle pour ouvrir la vue détaillée associée.</p>
+        </div>
+
+        <div id="programme-list" class="programme-list">Chargement du programme...</div>
+      </section>
+
+      <section class="stats-grid" aria-label="Statistiques du programme">
+        <article class="stat-card coral">
+          <span class="stat-label">Conférences</span>
+          <strong id="conference-count" class="stat-value">--</strong>
+        </article>
+        <article class="stat-card teal">
+          <span class="stat-label">Speakers</span>
+          <strong id="speaker-count" class="stat-value">--</strong>
+        </article>
+        <article class="stat-card gold">
+          <span class="stat-label">Salles</span>
+          <strong id="salle-count" class="stat-value">--</strong>
+        </article>
+        <article class="stat-card berry">
+          <span class="stat-label">Entreprises</span>
+          <strong id="entreprise-count" class="stat-value">--</strong>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="./assets/programme.js"></script>
+  </body>
+</html>
