@@ -1,4 +1,4 @@
-import { escapeHtml, fetchCollection, getSpeakerFullName, unregisterLegacyServiceWorkers } from './shared.js';
+import { escapeHtml, fetchCollection, getSpeakerFullName, resolveSiteUrl, unregisterLegacyServiceWorkers } from './shared.js';
 
 const sessionTokenKey = 'taia-admin-token';
 const sessionDateKey = 'taia-admin-date';
@@ -314,7 +314,7 @@ function buildMediaPreviewMarkup(field, currentValue) {
 
   return `
     <figure class="admin-media-preview" data-role="media-preview" data-field-name="${escapeHtml(field.name)}">
-      <img src="${escapeHtml(String(currentValue))}" alt="${escapeHtml(field.label)}" loading="lazy" />
+      <img src="${escapeHtml(resolveSiteUrl(String(currentValue)))}" alt="${escapeHtml(field.label)}" loading="lazy" />
       <figcaption>${escapeHtml(String(currentValue))}</figcaption>
     </figure>
   `;
@@ -582,7 +582,7 @@ function validatePayload(resourceType, payload) {
 }
 
 async function sendJsonRequest(url, method, payload) {
-  const response = await fetch(url, {
+  const response = await fetch(resolveSiteUrl(url), {
     method,
     headers: {
       ...(payload ? { 'content-type': 'application/json' } : {}),
@@ -642,7 +642,7 @@ function updateMediaPreview(card, field, path) {
 
   preview.classList.remove('is-empty');
   preview.innerHTML = `
-    <img src="${escapeHtml(path)}" alt="${escapeHtml(field.label)}" loading="lazy" />
+    <img src="${escapeHtml(resolveSiteUrl(path))}" alt="${escapeHtml(field.label)}" loading="lazy" />
     <figcaption>${escapeHtml(path)}</figcaption>
   `;
 

@@ -1,4 +1,4 @@
-import { escapeHtml, fetchCollection, formatTime, unregisterLegacyServiceWorkers } from './shared.js';
+import { escapeHtml, fetchCollection, formatTime, resolveSiteUrl, unregisterLegacyServiceWorkers } from './shared.js';
 
 function renderEmptyState(containerId, message) {
   const container = document.getElementById(containerId);
@@ -42,7 +42,7 @@ function renderSpeakers(items) {
     .map((speaker) => {
       return `
         <li class="resource-item">
-          <img class="speaker-photo-image" src="${escapeHtml(speaker.photo)}" alt="Portrait de ${escapeHtml(`${speaker.prenom} ${speaker.nom}`)}" />
+          <img class="speaker-photo-image" src="${escapeHtml(resolveSiteUrl(speaker.photo))}" alt="Portrait de ${escapeHtml(`${speaker.prenom} ${speaker.nom}`)}" />
           <div>
             <h3>${escapeHtml(`${speaker.prenom} ${speaker.nom}`)}</h3>
             <div class="resource-meta">
@@ -96,7 +96,7 @@ function renderEntreprises(items) {
     .map((entreprise) => {
       return `
         <li class="resource-item">
-          <img class="speaker-photo-image" src="${escapeHtml(entreprise.logo)}" alt="Logo ${escapeHtml(entreprise.nomEntreprise)}" />
+          <img class="speaker-photo-image" src="${escapeHtml(resolveSiteUrl(entreprise.logo))}" alt="Logo ${escapeHtml(entreprise.nomEntreprise)}" />
           <div>
             <h3>${escapeHtml(entreprise.nomEntreprise)}</h3>
             <div class="resource-meta">

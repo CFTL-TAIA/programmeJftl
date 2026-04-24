@@ -1,5 +1,25 @@
-export const githubProjectUrl = 'https://github.com/CFTL-TAIA/taia-api.github.io';
+export const githubProjectUrl = 'https://github.com/CFTL-TAIA/programmeJftl';
 export const programmeTitle = 'PROGRAMME DE LA JFTL 2026';
+
+function getSiteRootUrl() {
+  const rootLink = document.querySelector('.site-nav a[href], .site-header .brand[href]');
+
+  return new URL(rootLink?.getAttribute('href') || './', window.location.href);
+}
+
+export function resolveSiteUrl(path) {
+  const value = String(path || '');
+
+  if (!value) {
+    return getSiteRootUrl().toString();
+  }
+
+  if (/^[a-z]+:/i.test(value) || value.startsWith('//')) {
+    return value;
+  }
+
+  return new URL(value.replace(/^\/+/, ''), getSiteRootUrl()).toString();
+}
 
 export function escapeHtml(value) {
   return String(value)
@@ -31,10 +51,11 @@ export async function unregisterLegacyServiceWorkers() {
 }
 
 export async function fetchCollection(path) {
-  const response = await fetch(path);
+  const requestUrl = resolveSiteUrl(path);
+  const response = await fetch(requestUrl);
 
   if (!response.ok) {
-    throw new Error(`Erreur API sur ${path}`);
+    throw new Error(`Erreur API sur ${requestUrl}`);
   }
 
   return response.json();

@@ -11,6 +11,7 @@ import {
   getSpeakerInitials,
   getSpeakerSessions,
   getSalleSessions,
+  resolveSiteUrl,
   selectActive,
   unregisterLegacyServiceWorkers
 } from './shared.js';
@@ -91,7 +92,7 @@ function renderSpeakerDetail(speaker, sessions) {
   return `
     <article class="detail-card detail-card-speaker">
       <div class="detail-speaker-head">
-        <img class="detail-photo" src="${escapeHtml(speaker.photo)}" alt="Portrait de ${escapeHtml(getSpeakerFullName(speaker))}" />
+        <img class="detail-photo" src="${escapeHtml(resolveSiteUrl(speaker.photo))}" alt="Portrait de ${escapeHtml(getSpeakerFullName(speaker))}" />
         <div>
           <p class="eyebrow">Speaker selectionne</p>
           <h2>${escapeHtml(getSpeakerFullName(speaker))}</h2>
@@ -113,7 +114,7 @@ function renderSpeakerCards(dataset, selectedSpeaker) {
       return `
         <a class="directory-card speaker-card ${isActive ? 'is-active' : ''}" href="?id=${encodeURIComponent(speaker.id)}">
           <div class="speaker-card-head">
-            <img class="directory-photo" src="${escapeHtml(speaker.photo)}" alt="Portrait de ${escapeHtml(getSpeakerFullName(speaker))}" />
+            <img class="directory-photo" src="${escapeHtml(resolveSiteUrl(speaker.photo))}" alt="Portrait de ${escapeHtml(getSpeakerFullName(speaker))}" />
             <span class="directory-initials">${escapeHtml(getSpeakerInitials(speaker))}</span>
           </div>
           <h3>${escapeHtml(getSpeakerFullName(speaker))}</h3>
@@ -178,7 +179,7 @@ function renderEntrepriseDetail(entreprise, speakers, sessions) {
   return `
     <article class="detail-card detail-card-entreprise">
       <div class="detail-speaker-head">
-        <img class="detail-logo" src="${escapeHtml(entreprise.logo)}" alt="Logo ${escapeHtml(entreprise.nomEntreprise)}" />
+        <img class="detail-logo" src="${escapeHtml(resolveSiteUrl(entreprise.logo))}" alt="Logo ${escapeHtml(entreprise.nomEntreprise)}" />
         <div>
           <p class="eyebrow">Entreprise selectionnee</p>
           <h2>${escapeHtml(entreprise.nomEntreprise)}</h2>
@@ -199,7 +200,7 @@ function renderEntrepriseCards(dataset, selectedEntreprise) {
       const sessions = getEntrepriseSessions(entreprise.id, dataset);
       return `
         <a class="directory-card entreprise-card ${isActive ? 'is-active' : ''}" href="?id=${encodeURIComponent(entreprise.id)}">
-          <img class="directory-logo" src="${escapeHtml(entreprise.logo)}" alt="Logo ${escapeHtml(entreprise.nomEntreprise)}" />
+          <img class="directory-logo" src="${escapeHtml(resolveSiteUrl(entreprise.logo))}" alt="Logo ${escapeHtml(entreprise.nomEntreprise)}" />
           <h3>${escapeHtml(entreprise.nomEntreprise)}</h3>
           <p>${escapeHtml(`${speakers.length} speaker(s)`)} · ${escapeHtml(`${sessions.length} conference(s)`)}</p>
         </a>
