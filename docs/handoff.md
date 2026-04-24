@@ -9,6 +9,7 @@
 - Zone BDD JSON a la racine du projet
 - Endpoints `GET /api/conference`, `GET /api/speaker`, `GET /api/salle` et `GET /api/entreprise`
 - Endpoints d'admin `GET /api/admin/token` et `POST /api/admin/token`
+- Endpoint d'upload admin `POST /api/admin/media`
 - Endpoints ecriture `POST`, `PUT`, `DELETE` sur conference, speaker, salle et entreprise
 - Documentation Swagger interactive
 - Configuration Vercel pour deploiement serverless
@@ -20,11 +21,15 @@
 - Les reponses API sont construites depuis des fichiers de donnees JSON versionnes dans `BDD/`
 - Le serveur local `scripts/preview.mjs` reutilise la meme logique que les fonctions serverless
 - Le Swagger consomme le fichier OpenAPI genere et peut executer des requetes vers la vraie API sur le meme site
+- La page Swagger charge maintenant `swagger-ui-dist@5.32.4` via CDN pour repartir d'une base UI a jour avant toute personnalisation supplementaire
+- Le POC courant s'appuie sur le rendu natif Swagger UI avec un theme sombre applique localement aux request bodies en mode `Try it out` et aux panneaux `Example Value / Schema` des reponses pour obtenir une presentation homogene
+- Un ajustement CSS supplementaire a ete applique sur les reponses pour aplatir le `model-box` interne et supprimer l'effet visuel de double encapsulation dans les panneaux `Example Value / Schema`
 - Le filtre `etage` sur les speakers est deduit des salles associees a leurs conferences
 - Les speakers portent maintenant un rattachement `entreprise` et le front reconstruit les liaisons conference > entreprise depuis les speakers ou les titres de demo
 - Les conferences portent maintenant un champ `type` persiste dans `BDD/Conference.json`
 - L'admin repose sur un JWT quotidien a scopes : `editor` pour modifier, `admin-plus` pour creer et supprimer en plus
 - Les mots de passe admin sont exclusivement attendus via variables d'environnement cote serveur
+- L'admin permet aussi un upload direct de photos et logos en local, avec copie dans `BDD/` et `dist/BDD/` pour un rendu immediat en preview
 
 ## Sources principales
 
@@ -34,8 +39,10 @@
 - `lib/openapi.mjs` : generation OpenAPI partagee
 - `BDD/` : donnees JSON servant de base aux reponses et emplacement des photos et logos
 - `scripts/build.mjs` : generation du site et du fichier OpenAPI
+- `scripts/print-admin-token.mjs` : generation locale d'un JWT admin de test
 - `src/site/` : front programme, espace API et pages detaillees
 - `docs/Swagger/index.html` : interface Swagger
+- `lib/admin-media.mjs` : logique de stockage local des photos et logos uploades depuis l'admin
 - `vercel.json` : configuration de build et de runtime
 
 ## Commandes utiles
@@ -44,6 +51,7 @@
 npm run build
 npm run free-local-port
 npm run dev
+npm run admin-token
 ```
 
 ## Points d'attention
@@ -53,12 +61,16 @@ npm run dev
 - Toute modification durable de la BDD via API necessitera une persistance externe, car les fichiers locaux sur Vercel ne sont pas fiables pour l'ecriture persistante
 - Les JSON de `BDD/` sont adaptes pour la lecture et pour les tests locaux
 - Les ecritures API locales sont maintenant validees cote serveur avant persistance des fichiers JSON
+- Les uploads admin de photos et logos ecrivent bien en local, mais ne constituent pas une persistance fiable sur Vercel sans stockage externe
 - Le programme source correspond a la JFTL du 9 juin 2026 au Beffroi de Montrouge, reconstruit depuis `docs/Programme-JFTL26.pdf` puis consolide avec la page officielle CFTL
 - Les liaisons conferences > speakers > salles sont a jour dans les trois fichiers JSON de `BDD/`
 - Les liaisons speakers > entreprises sont presentes dans `BDD/Speakers.json` et `BDD/Entreprise.json`
 - Une partie des medias de `BDD/photos/` et `BDD/logos/` a ete remplacee par des assets verifies issus du site CFTL JFTL ; les entrees non confirmees restent en placeholders et peuvent etre remplacees unitairement sans modifier les IDs
 - Les contenances de salles sont des valeurs de travail conservees dans `Salle.json`, car absentes du PDF source
 - En local, un ancien service worker navigateur peut polluer les tests tant qu'il n'est pas desinscrit ; le front et Swagger declenchent maintenant ce nettoyage automatiquement
+- Une tentative precedente de personnalisation DOM des request bodies a ete retiree car elle perturbait l'editeur de requete ; le POC actuel evite de surcharger le composant et se limite a un theming CSS du rendu natif
+- Les descriptions de champs des request bodies sont deja portees par `src/api/routes.mjs`, ce qui permet au schema Swagger d'afficher la documentation de chaque champ sans enrichissement supplementaire dans le POC
+- Le POC courant a ete valide au build, mais pas encore par un test navigateur automatise ; un controle manuel local reste utile avant generalisation
 - En local, `npm run dev` tente d'abord de liberer le port `8080` si un ancien serveur Node TAIA y est encore attache
 - En local comme sur Vercel, les variables `TAIA_ADMIN_EDITOR_PASSWORD` et `TAIA_ADMIN_SUPER_PASSWORD` doivent etre configurees pour utiliser l'admin
 - En local, `.env.local` est auto-charge par `scripts/build.mjs`, `scripts/preview.mjs` et `scripts/print-admin-token.mjs` ; `.env.local.example` sert de modele et `.env.local` est ignore par Git

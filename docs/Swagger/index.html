@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Swagger - Projet API TAIA</title>
     <link rel="stylesheet" href="../../assets/styles.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.32.4/swagger-ui.css" />
     <style>
       body {
         margin: 0;
@@ -75,31 +75,132 @@
         max-width: 100% !important;
       }
 
-      #swagger-ui .taia-request-schema {
-        margin-top: 18px;
-        padding-top: 18px;
-        border-top: 1px solid rgba(20, 28, 44, 0.08);
+      #swagger-ui .opblock-section-request-body .model-example,
+      #swagger-ui .responses-inner .model-example {
+        margin-top: 12px;
+        padding: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 20px;
+        background: #0b1220;
+        box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.35);
       }
 
-      #swagger-ui .taia-request-schema-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        margin-bottom: 10px;
+      #swagger-ui .opblock-section-request-body .model-example .tab,
+      #swagger-ui .responses-inner .model-example .tab {
+        border-bottom: 1px solid rgba(148, 163, 184, 0.18);
       }
 
-      #swagger-ui .taia-request-schema-header strong {
-        font-size: 0.95rem;
-        color: #183153;
+      #swagger-ui .opblock-section-request-body .model-example .tabitem::after,
+      #swagger-ui .responses-inner .model-example .tabitem::after {
+        background: #f2a65a;
       }
 
-      #swagger-ui .taia-request-schema-header span {
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #55627a;
+      #swagger-ui .opblock-section-request-body .model-example .tablinks,
+      #swagger-ui .responses-inner .model-example .tablinks {
+        color: rgba(226, 232, 240, 0.76);
       }
+
+      #swagger-ui .opblock-section-request-body .model-example .tabitem.active .tablinks,
+      #swagger-ui .responses-inner .model-example .tabitem.active .tablinks,
+      #swagger-ui .opblock-section-request-body .model-example .tablinks:focus,
+      #swagger-ui .responses-inner .model-example .tablinks:focus,
+      #swagger-ui .opblock-section-request-body .model-example .tablinks:hover,
+      #swagger-ui .responses-inner .model-example .tablinks:hover {
+        color: #f8fafc;
+      }
+
+      #swagger-ui .opblock-section-request-body .model-example .model-container,
+      #swagger-ui .responses-inner .model-example .model-container,
+      #swagger-ui .opblock-section-request-body .model-example .model-box,
+      #swagger-ui .responses-inner .model-example .model-box,
+      #swagger-ui .opblock-section-request-body .model-example .model,
+      #swagger-ui .responses-inner .model-example .model,
+      #swagger-ui .opblock-section-request-body .model-example .property,
+      #swagger-ui .responses-inner .model-example .property,
+      #swagger-ui .opblock-section-request-body .model-example .prop,
+      #swagger-ui .responses-inner .model-example .prop,
+      #swagger-ui .opblock-section-request-body .model-example .prop-type,
+      #swagger-ui .responses-inner .model-example .prop-type,
+      #swagger-ui .opblock-section-request-body .model-example .prop-name,
+      #swagger-ui .responses-inner .model-example .prop-name,
+      #swagger-ui .opblock-section-request-body .model-example .model-title,
+      #swagger-ui .responses-inner .model-example .model-title,
+      #swagger-ui .opblock-section-request-body .model-example .model-title__text,
+      #swagger-ui .responses-inner .model-example .model-title__text,
+      #swagger-ui .opblock-section-request-body .model-example .brace-open,
+      #swagger-ui .responses-inner .model-example .brace-open,
+      #swagger-ui .opblock-section-request-body .model-example .brace-close,
+      #swagger-ui .responses-inner .model-example .brace-close,
+      #swagger-ui .opblock-section-request-body .model-example table tbody tr td,
+      #swagger-ui .responses-inner .model-example table tbody tr td {
+        color: #e2e8f0;
+      }
+
+      #swagger-ui .opblock-section-request-body .model-example .markdown,
+      #swagger-ui .responses-inner .model-example .markdown,
+      #swagger-ui .opblock-section-request-body .model-example .renderedMarkdown,
+      #swagger-ui .responses-inner .model-example .renderedMarkdown,
+      #swagger-ui .opblock-section-request-body .model-example .renderedMarkdown p,
+      #swagger-ui .responses-inner .model-example .renderedMarkdown p,
+      #swagger-ui .opblock-section-request-body .model-example .renderedMarkdown code,
+      #swagger-ui .responses-inner .model-example .renderedMarkdown code,
+      #swagger-ui .opblock-section-request-body .model-example .model-toggle:after,
+      #swagger-ui .responses-inner .model-example .model-toggle:after {
+        color: #cbd5e1;
+      }
+
+      #swagger-ui .opblock-section-request-body .model-example .model-toggle,
+      #swagger-ui .responses-inner .model-example .model-toggle {
+        border-color: #cbd5e1;
+      }
+
+      #swagger-ui .opblock-section-request-body .model-example .model-toggle:after,
+      #swagger-ui .responses-inner .model-example .model-toggle:after {
+        background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%23cbd5e1' d='M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/></svg>") 50% no-repeat;
+        background-size: 100%;
+      }
+
+      #swagger-ui .responses-inner .highlight-code,
+      #swagger-ui .responses-inner .microlight,
+      #swagger-ui .responses-inner pre {
+        background: #020617 !important;
+        color: #e2e8f0 !important;
+        box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.18) !important;
+      }
+
+      #swagger-ui .responses-inner .model-example .model-container {
+        margin-top: 14px;
+      }
+
+      #swagger-ui .responses-inner .model-example .model-box {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      #swagger-ui .responses-inner .model-example .highlight-code,
+      #swagger-ui .responses-inner .model-example pre,
+      #swagger-ui .responses-inner .model-example .microlight {
+        margin-top: 14px;
+      }
+
+      #swagger-ui .opblock-section-request-body .body-param textarea,
+      #swagger-ui .opblock-section-request-body .body-param__text {
+        min-height: 240px;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 18px;
+        background: #020617;
+        color: #e2e8f0;
+        box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.35);
+      }
+
+      #swagger-ui .opblock-section-request-body .body-param textarea:focus,
+      #swagger-ui .opblock-section-request-body .body-param__text:focus {
+        outline: 2px solid rgba(242, 166, 90, 0.35);
+        outline-offset: 0;
+      }
+
     </style>
   </head>
   <body>
@@ -134,7 +235,7 @@
         <div id="swagger-ui"></div>
       </section>
     </main>
-    <script src="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5.32.4/swagger-ui-bundle.js"></script>
     <script>
       function stableStringify(value) {
         if (Array.isArray(value)) {
@@ -190,62 +291,6 @@ ${indent}]`;
         return schema.type || 'value';
       }
 
-      function findOperationSpec(spec, method, path) {
-        return spec?.paths?.[path]?.[method.toLowerCase()] || null;
-      }
-
-      function mountRequestSchemaPanels(spec) {
-        const operationBlocks = document.querySelectorAll('#swagger-ui .opblock');
-
-        for (const block of operationBlocks) {
-          const method = block.querySelector('.opblock-summary-method')?.textContent?.trim();
-          const path = block.querySelector('.opblock-summary-path')?.textContent?.trim();
-          const requestBodySection = block.querySelector('.opblock-section-request-body');
-
-          if (!method || !path || !requestBodySection) {
-            continue;
-          }
-
-          const operation = findOperationSpec(spec, method, path);
-          const schema = operation?.requestBody?.content?.['application/json']?.schema;
-
-          if (!schema) {
-            continue;
-          }
-
-          let panel = requestBodySection.querySelector('.taia-request-schema');
-          if (!panel) {
-            panel = document.createElement('section');
-            panel.className = 'taia-request-schema';
-            requestBodySection.appendChild(panel);
-          }
-
-          panel.innerHTML = `
-            <div class="taia-request-schema-header">
-              <strong>Schema</strong>
-              <span>request body</span>
-            </div>
-            <pre><code>${formatSchemaForDisplay(schema).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}</code></pre>
-          `;
-        }
-      }
-
-      function createRequestSchemaScheduler(spec) {
-        let scheduled = false;
-
-        return function scheduleRequestSchemaMount() {
-          if (scheduled) {
-            return;
-          }
-
-          scheduled = true;
-          window.requestAnimationFrame(() => {
-            scheduled = false;
-            mountRequestSchemaPanels(spec);
-          });
-        };
-      }
-
       async function bootstrapSwagger() {
         if ('serviceWorker' in navigator) {
           const registrations = await navigator.serviceWorker.getRegistrations();
@@ -260,8 +305,6 @@ ${indent}]`;
           }
         }
 
-        const spec = await fetch('./openapi.json').then((response) => response.json());
-
         window.ui = SwaggerUIBundle({
           url: './openapi.json',
           dom_id: '#swagger-ui',
@@ -270,15 +313,7 @@ ${indent}]`;
           displayRequestDuration: true,
           defaultModelRendering: 'example',
           defaultModelExpandDepth: 8,
-          defaultModelsExpandDepth: 8,
-          onComplete() {
-            const container = document.getElementById('swagger-ui');
-            const scheduleRequestSchemaMount = createRequestSchemaScheduler(spec);
-
-            scheduleRequestSchemaMount();
-            container.addEventListener('click', scheduleRequestSchemaMount);
-            container.addEventListener('keydown', scheduleRequestSchemaMount);
-          }
+          defaultModelsExpandDepth: 8
         });
       }
 
